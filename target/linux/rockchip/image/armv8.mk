@@ -87,3 +87,12 @@ define Device/xunlong_orangepi-r1-plus-lts
   DEVICE_PACKAGES := kmod-usb-net-rtl8152
 endef
 TARGET_DEVICES += xunlong_orangepi-r1-plus-lts
+
+define Device/radxa_rock-pi-e
+  DEVICE_VENDOR := Radxa
+  DEVICE_MODEL := Rock Pi E
+  SOC := rk3328
+  SUPPORTED_DEVICES := radxa,rockpi-e
+  IMAGE/sysupgrade.img.gz := boot-common | boot-script | pine64-img | gzip | append-metadata
+endef
+TARGET_DEVICES += radxa_rock-pi-e
